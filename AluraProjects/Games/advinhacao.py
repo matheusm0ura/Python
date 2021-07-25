@@ -46,7 +46,13 @@ def imprime_mensagem(msg):
 
 def pede_numero():
   print("\n")
-  resp = int(input("Digite um número entre 1 e 100: "))
+  resp = str(input("Digite um número entre 1 e 100: "))
+  
+  while not resp.isnumeric():
+    print("Letras não são permitidas.")
+    resp = str(input("Digite um número: "))
+  resp = int(resp)
+  
   while (resp < 1 or resp > 100):
     print("Número inválido.")
     resp = int(input("Digite um número entre 1 e 100: "))
